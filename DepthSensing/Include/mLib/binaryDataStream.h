@@ -1,7 +1,3 @@
-
-#ifndef CORE_UTIL_BINARYDATASTREAM_H_
-#define CORE_UTIL_BINARYDATASTREAM_H_
-
 namespace ml
 {
 

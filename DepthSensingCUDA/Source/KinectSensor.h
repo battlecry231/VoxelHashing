@@ -9,8 +9,8 @@
 #ifdef KINECT
 
 #include "RGBDSensor.h"
-#include <NuiApi.h>
-#include <NuiSkeleton.h>
+
+
 
 class KinectSensor : public RGBDSensor
 {
@@ -22,23 +22,23 @@ public:
 	~KinectSensor();
 
 	//! Initializes the sensor
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
 	//! gets the next depth frame
-	HRESULT processDepth();
+	processDepth();
 
 	//! maps the color to depth data and copies depth and color data to the GPU
-	HRESULT processColor();
+	processColor();
 
 	std::string getSensorName() const {
 		return "Kinect";
 	}
 
 	//! toggles near mode if possible (only available on a windows Kinect)
-	HRESULT toggleNearMode();
+	toggleNearMode();
 
 	//! Toggle enable auto white balance
-	HRESULT toggleAutoWhiteBalance();
+	toggleAutoWhiteBalance();
 	
 
 private:

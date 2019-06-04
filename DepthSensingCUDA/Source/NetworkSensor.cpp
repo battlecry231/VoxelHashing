@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "NetworkSensor.h"
 
@@ -60,7 +60,7 @@ void NetworkSensor::waitForConnection()
 
 }
 
-HRESULT NetworkSensor::processDepth()
+NetworkSensor::processDepth()
 {
 	int byte_size_received = 0;
 

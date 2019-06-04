@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "StructureSensor.h"
 #include <iomanip>
@@ -7,7 +7,7 @@
 
 //FrameTimer ExampleServerSession::s_timer;
 
-HRESULT StructureSensor::processDepth()
+StructureSensor::processDepth()
 {
 	std::pair<float*,UCHAR*> frames = m_server.process(m_oldDepth, m_oldColor);
 	if (frames.first == NULL || frames.second == NULL) return S_FALSE;

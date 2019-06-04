@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "ChristophSensor.h"
 
@@ -43,14 +43,14 @@ ChristophSensor::~ChristophSensor()
 	SAFE_DELETE(m_StringCounter);
 }
 
-HRESULT ChristophSensor::createFirstConnected()
+ChristophSensor::createFirstConnected()
 {
 	std::string basePath = "..\\Data\\Christoph\\results_face1\\";
 	m_StringCounter = new StringCounter(basePath + "disparity_", "bin", 6, 1);
 	return S_OK;
 }
 
-HRESULT ChristophSensor::processDepth()
+ChristophSensor::processDepth()
 {
 	std::string filename = m_StringCounter->getNext();
 	std::ifstream input(filename, std::ofstream::binary);

@@ -20,9 +20,9 @@ class CUDARGBDAdapter
 		~CUDARGBDAdapter();
 
 		void OnD3D11DestroyDevice();			
-		HRESULT OnD3D11CreateDevice(ID3D11Device* device, RGBDSensor* depthSensor, unsigned int width, unsigned int height);
+		OnD3D11CreateDevice(ID3D11Device* device, RGBDSensor* depthSensor, unsigned int width, unsigned int height);
 
-		HRESULT process(ID3D11DeviceContext* context);
+		process(ID3D11DeviceContext* context);
 
 		float* getDepthMapResampledFloat()	{
 			return d_depthMapResampledFloat;

@@ -158,7 +158,7 @@ void assertFunctionMLIB(bool statement, const std::string &description);
 //#endif
 
 #ifndef D3D_VALIDATE
-#define D3D_VALIDATE(statement) { HRESULT hr = statement;  if(FAILED(hr)) { MLIB_ERROR(#statement); } }
+#define D3D_VALIDATE(statement) { hr = statement;  if(FAILED(hr)) { MLIB_ERROR(#statement); } }
 #endif
 
 }  // namespace ml

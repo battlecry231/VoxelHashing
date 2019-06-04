@@ -52,7 +52,7 @@
 // XInput includes
 #include <xinput.h>
 
-// HRESULT translation for Direct3D10 and other APIs 
+// translation for Direct3D10 and other APIs 
 #include <dxerr.h>
 
 // strsafe.h deprecates old unsecure string functions.  If you 
@@ -72,9 +72,9 @@
 #include <strsafe.h>
 #pragma warning( default : 4996 ) 
 
-typedef HRESULT (WINAPI * LPCREATEDXGIFACTORY)(REFIID, void ** );
+typedef (WINAPI * LPCREATEDXGIFACTORY)(REFIID, void ** );
 typedef HRESULT	(WINAPI * LPD3D11CREATEDEVICEANDSWAPCHAIN)(__in_opt IDXGIAdapter* pAdapter, D3D_DRIVER_TYPE DriverType, HMODULE Software, UINT Flags, __in_ecount_opt( FeatureLevels ) CONST D3D_FEATURE_LEVEL* pFeatureLevels, UINT FeatureLevels, UINT SDKVersion, __in_opt CONST DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, __out_opt IDXGISwapChain** ppSwapChain, __out_opt ID3D11Device** ppDevice, __out_opt D3D_FEATURE_LEVEL* pFeatureLevel, __out_opt ID3D11DeviceContext** ppImmediateContext );
-typedef HRESULT (WINAPI * LPD3D11CREATEDEVICE)( IDXGIAdapter*, D3D_DRIVER_TYPE, HMODULE, UINT32, D3D_FEATURE_LEVEL*, UINT, UINT32, ID3D11Device**, D3D_FEATURE_LEVEL*, ID3D11DeviceContext** );
+typedef (WINAPI * LPD3D11CREATEDEVICE)( IDXGIAdapter*, D3D_DRIVER_TYPE, HMODULE, UINT32, D3D_FEATURE_LEVEL*, UINT, UINT32, ID3D11Device**, D3D_FEATURE_LEVEL*, ID3D11DeviceContext** );
 typedef void (WINAPI * LPD3DX11COMPILEFROMMEMORY)(LPCSTR pSrcData, SIZE_T SrcDataLen, LPCSTR pFileName, CONST D3D10_SHADER_MACRO* pDefines, LPD3D10INCLUDE pInclude, 
 LPCSTR pFunctionName, LPCSTR pProfile, UINT Flags1, UINT Flags2, ID3DX11ThreadPump* pPump, ID3D10Blob** ppShader, ID3D10Blob** ppErrorMsgs, HRESULT* pHResult);
 

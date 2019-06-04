@@ -1,9 +1,5 @@
 #pragma once
 
-#include "stdafx.h"
-
-#include <D3D11.h>
-#include "DX11Utils.h"
 #include "TimingLog.h"
 #include "Eigen.h"
 #include "DepthCameraUtil.h"

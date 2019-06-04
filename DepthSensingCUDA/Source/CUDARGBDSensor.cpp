@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 
 #include "CUDARGBDSensor.h"
 #include "TimingLog.h"
@@ -93,9 +93,9 @@ void CUDARGBDSensor::OnD3D11DestroyDevice()
 	m_depthCameraData.free();
 }
 
-HRESULT CUDARGBDSensor::OnD3D11CreateDevice(ID3D11Device* device, CUDARGBDAdapter* CUDARGBDAdapter)
+CUDARGBDSensor::OnD3D11CreateDevice(ID3D11Device* device, CUDARGBDAdapter* CUDARGBDAdapter)
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	m_RGBDAdapter = CUDARGBDAdapter;
 
@@ -141,9 +141,9 @@ HRESULT CUDARGBDSensor::OnD3D11CreateDevice(ID3D11Device* device, CUDARGBDAdapte
 	return hr;
 }
 
-HRESULT CUDARGBDSensor::process(ID3D11DeviceContext* context)
+CUDARGBDSensor::process(ID3D11DeviceContext* context)
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	if (m_RGBDAdapter->process(context) == S_FALSE)	return S_FALSE;
 

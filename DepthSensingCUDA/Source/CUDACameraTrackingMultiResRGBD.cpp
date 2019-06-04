@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 
 #include "CUDACameraTrackingMultiResRGBD.h"
 #include "CUDAImageHelper.h"

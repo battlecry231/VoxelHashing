@@ -1,7 +1,4 @@
 
-#ifndef CORE_GRAPHICS_RAY_H_
-#define CORE_GRAPHICS_RAY_H_
-
 namespace ml {
 
 

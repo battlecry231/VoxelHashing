@@ -26,18 +26,18 @@ public:
 	~PrimeSenseSensor();
 
 	//! Initializes the sensor
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
 	//! Processes the depth data (and color)
-	HRESULT processDepth();
+	processDepth();
 
-	HRESULT saveDepth(float *p_depth){return S_OK;};
+	saveDepth(float *p_depth){return S_OK;};
 	
 
 	//! Processes the Kinect color data
-	HRESULT processColor()
+	processColor()
 	{
-		HRESULT hr = S_OK;
+		hr = S_OK;
 		return hr;
 	}
 
@@ -46,16 +46,16 @@ public:
 	}
 
 	//! Toggles the Kinect to near-mode; default is far mode
-	HRESULT toggleNearMode()
+	toggleNearMode()
 	{
 		// PrimeSense is always in near mode
 		return S_OK;
 	}
 	
 	//! Toggle enable auto white balance
-	HRESULT toggleAutoWhiteBalance()
+	toggleAutoWhiteBalance()
 	{
-		HRESULT hr = S_OK;
+		hr = S_OK;
 
 		// TODO
 
@@ -64,7 +64,7 @@ public:
 
 protected:
 	//! reads depth and color from the sensor
-	HRESULT readDepthAndColor(float* depthFloat, vec4uc* colorRGBX);
+	readDepthAndColor(float* depthFloat, vec4uc* colorRGBX);
 
 
 	// to prevent drawing until we have data for both streams

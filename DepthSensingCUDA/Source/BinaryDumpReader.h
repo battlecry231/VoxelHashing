@@ -7,7 +7,7 @@
 
 #include "GlobalAppState.h"
 #include "RGBDSensor.h"
-#include "stdafx.h"
+
 
 #ifdef BINARY_DUMP_READER
 
@@ -22,13 +22,13 @@ public:
 	~BinaryDumpReader();
 
 	//! initializes the sensor
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
 	//! reads the next depth frame
-	HRESULT processDepth();
+	processDepth();
 	
 
-	HRESULT processColor()	{
+	processColor()	{
 		//everything done in process depth since order is relevant (color must be read first)
 		return S_OK;
 	}

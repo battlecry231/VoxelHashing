@@ -1,5 +1,5 @@
 ﻿
-#include "stdafx.h"
+
 #include "DepthSensing.h"
 #include "StructureSensor.h"
 #include "SensorDataReader.h"
@@ -481,11 +481,11 @@ bool CALLBACK IsD3D11DeviceAcceptable( const CD3D11EnumAdapterInfo *AdapterInfo,
 //--------------------------------------------------------------------------------------
 // Create any D3D11 resources that aren't dependent on the back buffer
 //--------------------------------------------------------------------------------------
-HRESULT CALLBACK OnD3D11CreateDevice(ID3D11Device* pd3dDevice, const DXGI_SURFACE_DESC* pBackBufferSurfaceDesc, void* pUserContext)
+CALLBACK OnD3D11CreateDevice(ID3D11Device* pd3dDevice, const DXGI_SURFACE_DESC* pBackBufferSurfaceDesc, void* pUserContext)
 {
 	Util::printMemoryUseMB("init");
 
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	V_RETURN(GlobalAppState::get().OnD3D11CreateDevice(pd3dDevice));
 
@@ -615,10 +615,10 @@ void CALLBACK OnD3D11DestroyDevice( void* pUserContext )
 //--------------------------------------------------------------------------------------
 // Create any D3D11 resources that depend on the back buffer
 //--------------------------------------------------------------------------------------
-HRESULT CALLBACK OnD3D11ResizedSwapChain( ID3D11Device* pd3dDevice, IDXGISwapChain* pSwapChain,
+CALLBACK OnD3D11ResizedSwapChain( ID3D11Device* pd3dDevice, IDXGISwapChain* pSwapChain,
 										 const DXGI_SURFACE_DESC* pBackBufferSurfaceDesc, void* pUserContext )
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	V_RETURN( g_DialogResourceManager.OnD3D11ResizedSwapChain( pd3dDevice, pBackBufferSurfaceDesc ) );
 
@@ -870,13 +870,13 @@ void CALLBACK OnD3D11FrameRender( ID3D11Device* pd3dDevice, ID3D11DeviceContext*
 #endif
 
 	// if we have received any valid new depth data we may need to draw
-	HRESULT bGotDepth = g_CudaDepthSensor.process(pd3dImmediateContext);
+	bGotDepth = g_CudaDepthSensor.process(pd3dImmediateContext);
 
 	// Filtering
 	g_CudaDepthSensor.setFiterDepthValues(GlobalAppState::get().s_depthFilter, GlobalAppState::get().s_depthSigmaD, GlobalAppState::get().s_depthSigmaR);
 	g_CudaDepthSensor.setFiterIntensityValues(GlobalAppState::get().s_colorFilter, GlobalAppState::get().s_colorSigmaD, GlobalAppState::get().s_colorSigmaR);
 
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	///////////////////////////////////////
 	// Render
@@ -930,7 +930,7 @@ void CALLBACK OnD3D11FrameRender( ID3D11Device* pd3dDevice, ID3D11DeviceContext*
 #ifdef STRUCTURE_SENSOR
 		if (GlobalAppState::get().s_sensorIdx == GlobalAppState::Sensor_StructureSensor) {
 			ID3D11Texture2D* pSurface;
-			HRESULT hr = DXUTGetDXGISwapChain()->GetBuffer( 0, __uuidof( ID3D11Texture2D ), reinterpret_cast< void** >( &pSurface ) );
+			hr = DXUTGetDXGISwapChain()->GetBuffer( 0, __uuidof( ID3D11Texture2D ), reinterpret_cast< void** >( &pSurface ) );
 			if (pSurface) {
 				float* tex = (float*)CreateAndCopyToDebugTexture2D(pd3dDevice, pd3dImmediateContext, pSurface, true); //!!! TODO just copy no create
 				((StructureSensor*)getRGBDSensor())->updateFeedbackImage((BYTE*)tex);

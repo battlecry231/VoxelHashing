@@ -18,22 +18,22 @@ public:
 	~BinaryDumpReader();
 
 	//! initializes the sensor
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
 	//! reads the next depth frame
-	HRESULT processDepth();
+	processDepth();
 
-	HRESULT processColor()	{
+	processColor()	{
 		//everything done in process depth since order is relevant (color must be read first)
 		return S_OK;
 	}
 
-	HRESULT BinaryDumpReader::toggleNearMode()	{
+	BinaryDumpReader::toggleNearMode()	{
 		return S_OK;
 	}
 
 	//! Toggle enable auto white balance
-	HRESULT toggleAutoWhiteBalance() {
+	toggleAutoWhiteBalance() {
 		return S_OK;
 	}
 

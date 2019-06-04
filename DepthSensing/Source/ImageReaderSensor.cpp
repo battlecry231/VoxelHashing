@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 
 #include "ImageReaderSensor.h"
 
@@ -18,9 +18,9 @@ ImageReaderSensor::~ImageReaderSensor()
 
 }
 
-HRESULT ImageReaderSensor::createFirstConnected()
+ImageReaderSensor::createFirstConnected()
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	//what Qian-Yi / Vladlen tell us
 	float focalLengthX = 525.0f;
@@ -40,9 +40,9 @@ HRESULT ImageReaderSensor::createFirstConnected()
 	return hr;
 }
 
-HRESULT ImageReaderSensor::processDepth()
+ImageReaderSensor::processDepth()
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 	if (m_CurrentFrameNumberDepth >= m_NumFrames) {
 		return S_FALSE;
 	}
@@ -62,9 +62,9 @@ HRESULT ImageReaderSensor::processDepth()
 	return hr;
 }
 
-HRESULT ImageReaderSensor::processColor()
+ImageReaderSensor::processColor()
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 	if (m_CurrentFrameNumberColor >= m_NumFrames) {
 		return S_FALSE;
 	}

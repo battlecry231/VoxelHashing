@@ -1,4 +1,3 @@
-
 #include "common.h"
 #include "console.h"
 #include "grid2d.h"
@@ -30,7 +29,7 @@
 #include "boundingBox3d.h"
 #include "meshData.h"
 #include "meshIO.h"
-#include "PointCloud.h"
+#include "pointCloud.h"
 #include "PointCloudIO.h"
 #include "StringCounter.h"
 

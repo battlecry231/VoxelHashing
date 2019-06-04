@@ -131,18 +131,6 @@ void assertFunctionMLIB(bool statement, const std::string &description);
 #define SAFE_RELEASE(p) { if (p) { p->Release();   (p)=NULL; } }
 #endif
 
-//#ifndef V_RETURN
-//#define V_RETURN(hr) { if (FAILED(hr)) { return (hr); } }
-//#endif
-
-//#ifndef E_RETURN
-//#define E_RETURN(hr) { if(FAILED(hr)) { Console::log() << #hr << " " << hr << std::endl; } }
-//#endif
-
-#ifndef D3D_VALIDATE
-#define D3D_VALIDATE(statement) { HRESULT hr = statement;  if(FAILED(hr)) { MLIB_ERROR(#statement); } }
-#endif
-
 }  // namespace ml
 
 

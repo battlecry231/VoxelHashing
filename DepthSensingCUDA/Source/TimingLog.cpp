@@ -1,6 +1,4 @@
 
-#include "stdafx.h"
-
 #include "TimingLog.h"
 
 double TimingLog::totalTimeHoleFilling = 0.0;

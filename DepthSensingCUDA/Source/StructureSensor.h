@@ -185,7 +185,7 @@ public:
 	}
 
 
-	HRESULT createFirstConnected() {
+	createFirstConnected() {
 		waitForConnection();
 
 		// get calibration
@@ -212,10 +212,10 @@ public:
 		return S_OK;
 	}
 
-	HRESULT processDepth();
+	processDepth();
 
 	// already in processDepth
-	HRESULT processColor() { return S_OK; }
+	processColor() { return S_OK; }
 
 	std::string getSensorName() const {
 		return "StructureSensor";

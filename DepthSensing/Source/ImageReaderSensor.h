@@ -14,15 +14,15 @@ public:
 	ImageReaderSensor();
 	~ImageReaderSensor();
 
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
-	HRESULT processDepth();
+	processDepth();
 
-	HRESULT processColor();
+	processColor();
 
-	HRESULT toggleAutoWhiteBalance()
+	toggleAutoWhiteBalance()
 	{
-		HRESULT hr = S_OK;
+		hr = S_OK;
 
 		return hr;
 	}

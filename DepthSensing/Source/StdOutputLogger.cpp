@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 
 #include "StdOutputLogger.h"
 #include <io.h>

@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "RGBDSensor.h"
 #include <limits>
@@ -75,7 +75,7 @@ RGBDSensor::~RGBDSensor()
 	reset();
 }
 
-HRESULT RGBDSensor::toggleNearMode()
+RGBDSensor::toggleNearMode()
 {
 	m_bNearMode = !m_bNearMode;
 

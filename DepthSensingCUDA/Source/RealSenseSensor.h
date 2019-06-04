@@ -23,14 +23,14 @@ public:
 	~RealSenseSensor();
 
 	//! Initializes the sensor
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
 	//! Processes the depth & color data
-	HRESULT processDepth();
+	processDepth();
 	
 
 	//! processing happends in processdepth()
-	HRESULT processColor() {
+	processColor() {
 		return S_OK;
 	}
 

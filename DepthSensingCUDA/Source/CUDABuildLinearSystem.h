@@ -4,7 +4,7 @@
 /* Linear System Build on the GPU for ICP                               */
 /************************************************************************/
 
-#include "stdafx.h"
+
 
 #include "Eigen.h"
 #include "ICPErrorLog.h"

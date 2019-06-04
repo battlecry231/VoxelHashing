@@ -2,9 +2,6 @@
 
 #include "DepthSensor.h"
 
-#include <NuiApi.h>
-#include <NuiSkeleton.h>
-
 #include <iostream>
 #include <fstream>
 #include <list>
@@ -104,7 +101,7 @@ public:
 		}
 	}
 
-	HRESULT BinaryDumpSensorOld::createFirstConnected()
+	BinaryDumpSensorOld::createFirstConnected()
 	{
 		// Open File
 		//std::string filename = ".\\sequence_bookshop.bdump";
@@ -138,26 +135,26 @@ public:
 		return S_OK;
 	}
 
-	HRESULT BinaryDumpSensorOld::processDepth()
+	BinaryDumpSensorOld::processDepth()
 	{
 		m_infile.read((char*)m_colorRGBX, sizeof(BYTE)*getColorWidth()*getColorHeight()*getColorBytesPerPixel());
 		m_infile.read((char*)m_depthD16, sizeof(unsigned short)*getDepthWidth()*getDepthHeight());
 		return S_OK;
 	}
 
-	HRESULT processColor()
+	processColor()
 	{
 		//everything done in process depth since order is relevant (color must be read first)
 		return S_OK;
 	}
 
-	HRESULT BinaryDumpSensorOld::toggleNearMode()
+	BinaryDumpSensorOld::toggleNearMode()
 	{
 		return S_OK;
 	}
 
 	//! Toggle enable auto white balance
-	HRESULT toggleAutoWhiteBalance()
+	toggleAutoWhiteBalance()
 	{
 		return S_OK;
 	}

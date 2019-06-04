@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 #include "IntelSensor.h"
 
 #ifdef INTEL_SENSOR
@@ -32,7 +32,7 @@ IntelSensor::~IntelSensor()
 	}
 }
 
-HRESULT IntelSensor::createFirstConnected()
+IntelSensor::createFirstConnected()
 {
 	m_sensor = DSCreate(DS_DS4_PLATFORM);
 	m_colorSensor = m_sensor->accessThird();
@@ -103,9 +103,9 @@ HRESULT IntelSensor::createFirstConnected()
 	return S_OK;
 }
 
-HRESULT IntelSensor::processDepth()
+IntelSensor::processDepth()
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	if (!m_sensor->grab()) return S_FALSE;
 
@@ -132,11 +132,11 @@ HRESULT IntelSensor::processDepth()
 	return hr;
 }
 
-HRESULT IntelSensor::processColor()
+IntelSensor::processColor()
 {
 	//return S_FALSE;
 
-	HRESULT hr = S_OK;
+	hr = S_OK;
 	if (m_colorSensor && m_colorSensor->isThirdEnabled()) // && m_colorSensor->getThirdFrameNumber() != m_colorFrameNumber)
 	{
 		assert(m_colorSensor->getThirdPixelFormat() == DS_RGB8);

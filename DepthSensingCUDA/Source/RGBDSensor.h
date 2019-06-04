@@ -27,19 +27,19 @@ public:
 	virtual ~RGBDSensor();
 
 	//! Connected to Depth Sensor
-	virtual HRESULT createFirstConnected() = 0;
+	virtual createFirstConnected() = 0;
 
 	//! Processes the depth data 
-	virtual HRESULT processDepth() = 0;
+	virtual processDepth() = 0;
 
 	//! Processes the color data
-	virtual HRESULT processColor() = 0;
+	virtual processColor() = 0;
 
 	//! Returns the sensor name
 	virtual std::string getSensorName() const = 0;
 
 	//! Toggles the near-mode if available
-	virtual HRESULT toggleNearMode();
+	virtual toggleNearMode();
 
 	//! Get the intrinsic camera matrix of the depth sensor
 	const mat4f& getDepthIntrinsics() const;

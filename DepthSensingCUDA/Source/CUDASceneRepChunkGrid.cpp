@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "CUDASceneRepChunkGrid.h"
 
@@ -9,7 +9,7 @@ LONG WINAPI StreamingFunc(LPVOID lParam) {
 	CUDASceneRepChunkGrid* chunkGrid = (CUDASceneRepChunkGrid*)lParam;
 
 	while (true)	{
-		HRESULT hr = S_OK;
+		hr = S_OK;
 
 		chunkGrid->streamOutToCPUPass1CPU(true);
 

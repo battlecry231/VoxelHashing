@@ -4,7 +4,7 @@
 /* Helper functions from eigen to and from our format    */
 /*********************************************************/
 
-#include "stdafx.h"
+
 
 #include "Eigen.h"
 #include "d3dx9math.h"

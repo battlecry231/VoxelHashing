@@ -6,14 +6,14 @@
 
 #include "DepthCameraUtil.h"
 #include "MatrixConversion.h"
-#include "DX11QuadDrawer.h"
+
 #include "CUDABuildLinearSystem.h"
 #include "ICPErrorLog.h"
 #include "TimingLog.h"
 #include "Eigen.h"
 
-#include <D3D11.h>
-#include "DX11Utils.h"
+
+
 
 #include "CameraTrackingInput.h"
 

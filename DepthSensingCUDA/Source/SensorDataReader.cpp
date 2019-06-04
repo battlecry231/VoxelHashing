@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "SensorDataReader.h"
 #include "GlobalAppState.h"
@@ -37,7 +37,7 @@ SensorDataReader::~SensorDataReader()
 }
 
 
-HRESULT SensorDataReader::createFirstConnected()
+SensorDataReader::createFirstConnected()
 {
 	releaseData();
 
@@ -96,7 +96,7 @@ void SensorDataReader::loadNextSensFile() {
 
 }
 
-HRESULT SensorDataReader::processDepth()
+SensorDataReader::processDepth()
 {
 	//if (m_currFrame >= m_numFrames)
 	//{

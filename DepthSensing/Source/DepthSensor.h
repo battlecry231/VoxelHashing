@@ -4,8 +4,6 @@
 /* Parent class of all sensors (sensors MUST inherit from that class)   */
 /************************************************************************/
 
-#include "stdafx.h"
-
 #include <cassert>
 
 struct Intrinsics {
@@ -57,19 +55,19 @@ class DepthSensor
 		virtual ~DepthSensor();
 
 		//! Connected to Depth Sensor
-		virtual HRESULT createFirstConnected() = 0;
+		virtual createFirstConnected() = 0;
 
 		//! Processes the depth data 
-		virtual HRESULT processDepth() = 0;
+		virtual processDepth() = 0;
 
 		//! Processes the color data
-		virtual HRESULT processColor() = 0;
+		virtual processColor() = 0;
 
 		//! Toggles the near-mode if available (only some cameras can do that)
-		virtual HRESULT toggleNearMode() { return S_OK; }
+		virtual toggleNearMode() { return S_OK; }
 
 		//! Toggle enable auto white balance (only some cameras can do that)
-		virtual HRESULT toggleAutoWhiteBalance() { return S_OK; }
+		virtual toggleAutoWhiteBalance() { return S_OK; }
 
 		//! Get the intrinsics of the sensor
 		const Intrinsics& getIntrinsics() const {

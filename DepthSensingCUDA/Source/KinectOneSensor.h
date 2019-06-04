@@ -29,12 +29,12 @@ public:
 
 	~KinectOneSensor();
 
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
-	HRESULT processDepth();
+	processDepth();
 
-	HRESULT processColor() {
-		HRESULT hr = S_OK;
+	processColor() {
+		hr = S_OK;
 		return hr;
 	}
 
@@ -42,22 +42,22 @@ public:
 		return "KinectOne";
 	}
 
-	HRESULT saveDepth(float *p_depth){return S_OK;};
+	saveDepth(float *p_depth){return S_OK;};
 
-	HRESULT toggleAutoWhiteBalance() {
-		HRESULT hr = S_OK;
+	toggleAutoWhiteBalance() {
+		hr = S_OK;
 		return hr;
 	}
 
 private:
 
-	HRESULT copyDepth( IDepthFrame* pDepthFrame );
-	HRESULT setupUndistortion();
+	copyDepth( IDepthFrame* pDepthFrame );
+	setupUndistortion();
 	/// <summary>
 	/// Adjust color to the same space as depth
 	/// </summary>
 	/// <returns>S_OK for success, or failure code</returns>
-	HRESULT mapColorToDepth();
+	mapColorToDepth();
 
 	// Current Kinect
 	IKinectSensor*          m_pKinectSensor;

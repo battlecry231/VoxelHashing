@@ -372,7 +372,7 @@ encode_image (
     GdiPlus::getInstance();
 
     Gdiplus::Status status = Gdiplus::Ok;
-    HRESULT result = S_OK;
+    result = S_OK;
 
 	uint8_t* temporaryBuffer = 0;
 	const uint8_t* actualBuffer = 0;

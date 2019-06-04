@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 
 #include "VoxelUtilHashSDF.h"
 #include "RayCastSDFUtil.h"

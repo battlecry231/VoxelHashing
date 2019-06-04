@@ -6,7 +6,7 @@
 
 #include "DepthSensor.h"
 
-#include "stdafx.h"
+
 
 
 class ChristophSensor : public DepthSensor
@@ -20,22 +20,22 @@ public:
 	~ChristophSensor();
 
 	//! Initializes the sensor
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
 	//! Reads the next depth (and color) frame
-	HRESULT processDepth();
+	processDepth();
 
-	HRESULT processColor() {
+	processColor() {
 		//everything done in process depth since order is relevant (color must be read first)
 		return S_OK;
 	}
 
-	HRESULT ChristophSensor::toggleNearMode() {
+	ChristophSensor::toggleNearMode() {
 		return S_OK;
 	}
 
 	//! Toggle enable auto white balance
-	HRESULT toggleAutoWhiteBalance() {
+	toggleAutoWhiteBalance() {
 		return S_OK;
 	}
 

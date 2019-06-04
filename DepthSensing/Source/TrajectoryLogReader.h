@@ -4,7 +4,7 @@
 /* Can read pre-recorded trajectories and use it for surface fusion     */
 /************************************************************************/
 
-#include "stdafx.h"
+
 
 #include <string>
 #include <fstream>

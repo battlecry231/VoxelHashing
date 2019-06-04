@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "CUDAScan.h"
 #include <assert.h> 
 

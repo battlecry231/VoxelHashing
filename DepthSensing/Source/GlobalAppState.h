@@ -10,17 +10,14 @@
 // Only works when OpenNI 2 SDK is installed
 //#define OPEN_NI
 
-#include "DX11Utils.h"
-#include "DXUT.h"
+
+
 
 #define SDF_BLOCK_SIZE 8
 #define RENDERMODE_INTEGRATE 0 
 #define RENDERMODE_VIEW 1
 
 #include "DepthSensor.h"
-
-#include "stdafx.h"
-
 #include <string>
 
 #define X_GLOBAL_APP_STATE_FIELDS \
@@ -165,7 +162,7 @@ class GlobalAppState
 
 
 
-		HRESULT OnD3D11CreateDevice(ID3D11Device* pd3dDevice);
+		OnD3D11CreateDevice(ID3D11Device* pd3dDevice);
 
 		void OnD3D11DestroyDevice();
 

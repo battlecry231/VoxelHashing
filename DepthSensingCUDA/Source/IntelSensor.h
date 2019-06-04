@@ -22,14 +22,14 @@ public:
 	~IntelSensor();
 
 	//! Initializes the sensor
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
 	//! gets the next depth frame
-	HRESULT processDepth();
+	processDepth();
 
 	//! must call process depth before process color, always returns last color frame
 	//! maps the color to depth data
-	HRESULT processColor();
+	processColor();
 
 	std::string getSensorName() const {
 		return "IntelSensor";

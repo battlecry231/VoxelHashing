@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 
 #include "CUDARGBDAdapter.h"
 #include "TimingLog.h"
@@ -41,9 +41,9 @@ void CUDARGBDAdapter::OnD3D11DestroyDevice()
 	cutilSafeCall(cudaFree(d_colorMapResampledFloat4));
 }
 
-HRESULT CUDARGBDAdapter::OnD3D11CreateDevice(ID3D11Device* device, RGBDSensor* RGBDSensor, unsigned int width, unsigned int height)
+CUDARGBDAdapter::OnD3D11CreateDevice(ID3D11Device* device, RGBDSensor* RGBDSensor, unsigned int width, unsigned int height)
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	m_RGBDSensor = RGBDSensor;
 
@@ -90,9 +90,9 @@ HRESULT CUDARGBDAdapter::OnD3D11CreateDevice(ID3D11Device* device, RGBDSensor* R
 	return hr;
 }
 
-HRESULT CUDARGBDAdapter::process(ID3D11DeviceContext* context)
+CUDARGBDAdapter::process(ID3D11DeviceContext* context)
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	if (m_RGBDSensor->processDepth() != S_OK)	return S_FALSE; // Order is important!
 	if (m_RGBDSensor->processColor() != S_OK)	return S_FALSE;

@@ -13,7 +13,7 @@
 
 #include "Eigen.h"
 
-#include "stdafx.h"
+
 
 #include <vector>
 #include <string>
@@ -170,7 +170,7 @@ public:
 	}
 
 
-	HRESULT OnD3D11CreateDevice(ID3D11Device* pd3dDevice);
+	OnD3D11CreateDevice(ID3D11Device* pd3dDevice);
 	void OnD3D11DestroyDevice();
 
 	void WaitForGPU();

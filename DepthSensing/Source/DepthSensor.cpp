@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "DepthSensor.h"
 #include "GlobalAppState.h"

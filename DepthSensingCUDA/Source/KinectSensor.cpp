@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "KinectSensor.h"
 
@@ -58,10 +58,10 @@ KinectSensor::~KinectSensor()
 	SAFE_DELETE_ARRAY(m_colorCoordinates);
 }
 
-HRESULT KinectSensor::createFirstConnected()
+KinectSensor::createFirstConnected()
 {
 	INuiSensor* pNuiSensor = NULL;
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	int iSensorCount = 0;
 	hr = NuiGetSensorCount(&iSensorCount);
@@ -123,7 +123,7 @@ HRESULT KinectSensor::createFirstConnected()
 	if (FAILED(hr) ) { return hr; }
 
 	INuiColorCameraSettings* colorCameraSettings;
-	HRESULT hrFlag = m_pNuiSensor->NuiGetColorCameraSettings(&colorCameraSettings);
+	hrFlag = m_pNuiSensor->NuiGetColorCameraSettings(&colorCameraSettings);
 
 	if (hr != E_NUI_HARDWARE_FEATURE_UNAVAILABLE)
 	{
@@ -156,9 +156,9 @@ HRESULT KinectSensor::createFirstConnected()
 	return hr;
 }
 
-HRESULT KinectSensor::processDepth()
+KinectSensor::processDepth()
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	//wait until data is available
 	if (!(WAIT_OBJECT_0 == WaitForSingleObject(m_hNextDepthFrameEvent, 0)))	return S_FALSE;
@@ -228,13 +228,13 @@ HRESULT KinectSensor::processDepth()
 	return hr;
 }
 
-HRESULT KinectSensor::processColor()
+KinectSensor::processColor()
 {
 	if (! (WAIT_OBJECT_0 == WaitForSingleObject(m_hNextColorFrameEvent, 0)) )	return S_FALSE;
 
 	NUI_IMAGE_FRAME imageFrame;
 
-	HRESULT hr = S_OK;
+	hr = S_OK;
 	hr = m_pNuiSensor->NuiImageStreamGetNextFrame(m_pColorStreamHandle, 0, &imageFrame);
 	if ( FAILED(hr) ) { return hr; }
 
@@ -289,9 +289,9 @@ HRESULT KinectSensor::processColor()
 	return hr;
 }
 
-HRESULT KinectSensor::toggleNearMode()
+KinectSensor::toggleNearMode()
 {
-	HRESULT hr = E_FAIL;
+	hr = E_FAIL;
 
 	if ( m_pNuiSensor )
 	{
@@ -306,10 +306,10 @@ HRESULT KinectSensor::toggleNearMode()
 	return hr;
 }
 
-HRESULT KinectSensor::toggleAutoWhiteBalance()
+KinectSensor::toggleAutoWhiteBalance()
 {
 	INuiColorCameraSettings* colorCameraSettings;
-	HRESULT hr = S_OK;
+	hr = S_OK;
 	hr = m_pNuiSensor->NuiGetColorCameraSettings(&colorCameraSettings);
 	if (hr != E_NUI_HARDWARE_FEATURE_UNAVAILABLE) {	//feature only supported with windows Kinect
 

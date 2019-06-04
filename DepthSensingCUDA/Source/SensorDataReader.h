@@ -7,7 +7,7 @@
 
 #include "GlobalAppState.h"
 #include "RGBDSensor.h"
-#include "stdafx.h"
+
 
 #ifdef SENSOR_DATA_READER
 
@@ -26,13 +26,13 @@ public:
 	~SensorDataReader();
 
 	//! initializes the sensor
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
 	//! reads the next depth frame
-	HRESULT processDepth();
+	processDepth();
 
 
-	HRESULT processColor()	{
+	processColor()	{
 		//everything done in process depth since order is relevant (color must be read first)
 		return S_OK;
 	}

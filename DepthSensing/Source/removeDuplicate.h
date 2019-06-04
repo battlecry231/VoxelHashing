@@ -7,7 +7,7 @@
 /* Helper functions for marching cubes to remove duplicate vertices     */
 /************************************************************************/
 
-#include "stdafx.h"
+
 
 #include <vector>
 #include <map>

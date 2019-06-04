@@ -1,11 +1,11 @@
-#include "stdafx.h"
+
 
 #include "GlobalAppState.h"
 
 
-HRESULT GlobalAppState::OnD3D11CreateDevice(ID3D11Device* pd3dDevice)
+GlobalAppState::OnD3D11CreateDevice(ID3D11Device* pd3dDevice)
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	/////////////////////////////////////////////////////
 	// Query

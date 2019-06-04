@@ -52,7 +52,7 @@
 // XInput includes
 #include <xinput.h>
 
-// HRESULT translation for Direct3D10 and other APIs 
+// translation for Direct3D10 and other APIs 
 #include <dxerr.h>
 
 // strsafe.h deprecates old unsecure string functions.  If you 
@@ -123,42 +123,42 @@ struct DXUTDeviceSettings
 #define DXUTERR_DEVICEREMOVED           MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x090A)
 
 
-typedef HRESULT ( WINAPI* LPCREATEDXGIFACTORY )( REFIID, void** );
-typedef HRESULT ( WINAPI* LPD3D10CREATEDEVICE )( IDXGIAdapter*, D3D10_DRIVER_TYPE, HMODULE, UINT, UINT32,
+typedef ( WINAPI* LPCREATEDXGIFACTORY )( REFIID, void** );
+typedef ( WINAPI* LPD3D10CREATEDEVICE )( IDXGIAdapter*, D3D10_DRIVER_TYPE, HMODULE, UINT, UINT32,
                                                  ID3D10Device** );
-typedef HRESULT ( WINAPI* LPD3D10CREATEDEVICE1 )( IDXGIAdapter*, D3D10_DRIVER_TYPE, HMODULE, UINT,
+typedef ( WINAPI* LPD3D10CREATEDEVICE1 )( IDXGIAdapter*, D3D10_DRIVER_TYPE, HMODULE, UINT,
                                                   D3D10_FEATURE_LEVEL1, UINT, ID3D10Device1** );
-typedef HRESULT ( WINAPI* LPD3D10CREATESTATEBLOCK )( ID3D10Device* pDevice, D3D10_STATE_BLOCK_MASK* pStateBlockMask,
+typedef ( WINAPI* LPD3D10CREATESTATEBLOCK )( ID3D10Device* pDevice, D3D10_STATE_BLOCK_MASK* pStateBlockMask,
                                                      ID3D10StateBlock** ppStateBlock );
-typedef HRESULT ( WINAPI* LPD3D10STATEBLOCKMASKUNION )( D3D10_STATE_BLOCK_MASK* pA, D3D10_STATE_BLOCK_MASK* pB,
+typedef ( WINAPI* LPD3D10STATEBLOCKMASKUNION )( D3D10_STATE_BLOCK_MASK* pA, D3D10_STATE_BLOCK_MASK* pB,
                                                         D3D10_STATE_BLOCK_MASK* pResult );
-typedef HRESULT ( WINAPI* LPD3D10STATEBLOCKMASKINTERSECT )( D3D10_STATE_BLOCK_MASK* pA, D3D10_STATE_BLOCK_MASK* pB,
+typedef ( WINAPI* LPD3D10STATEBLOCKMASKINTERSECT )( D3D10_STATE_BLOCK_MASK* pA, D3D10_STATE_BLOCK_MASK* pB,
                                                             D3D10_STATE_BLOCK_MASK* pResult );
-typedef HRESULT ( WINAPI* LPD3D10STATEBLOCKMASKDIFFERENCE )( D3D10_STATE_BLOCK_MASK* pA, D3D10_STATE_BLOCK_MASK* pB,
+typedef ( WINAPI* LPD3D10STATEBLOCKMASKDIFFERENCE )( D3D10_STATE_BLOCK_MASK* pA, D3D10_STATE_BLOCK_MASK* pB,
                                                              D3D10_STATE_BLOCK_MASK* pResult );
-typedef HRESULT ( WINAPI* LPD3D10STATEBLOCKMASKENABLECAPTURE )( D3D10_STATE_BLOCK_MASK* pMask,
+typedef ( WINAPI* LPD3D10STATEBLOCKMASKENABLECAPTURE )( D3D10_STATE_BLOCK_MASK* pMask,
                                                                 D3D10_DEVICE_STATE_TYPES StateType, UINT RangeStart,
                                                                 UINT RangeLength );
-typedef HRESULT ( WINAPI* LPD3D10STATEBLOCKMASKDISABLECAPTURE )( D3D10_STATE_BLOCK_MASK* pMask,
+typedef ( WINAPI* LPD3D10STATEBLOCKMASKDISABLECAPTURE )( D3D10_STATE_BLOCK_MASK* pMask,
                                                                  D3D10_DEVICE_STATE_TYPES StateType, UINT RangeStart,
                                                                  UINT RangeLength );
-typedef HRESULT ( WINAPI* LPD3D10STATEBLOCKMASKENABLEALL )( D3D10_STATE_BLOCK_MASK* pMask );
-typedef HRESULT ( WINAPI* LPD3D10STATEBLOCKMASKDISABLEALL )( D3D10_STATE_BLOCK_MASK* pMask );
+typedef ( WINAPI* LPD3D10STATEBLOCKMASKENABLEALL )( D3D10_STATE_BLOCK_MASK* pMask );
+typedef ( WINAPI* LPD3D10STATEBLOCKMASKDISABLEALL )( D3D10_STATE_BLOCK_MASK* pMask );
 typedef BOOL ( WINAPI* LPD3D10STATEBLOCKMASKGETSETTING )( D3D10_STATE_BLOCK_MASK* pMask,
                                                           D3D10_DEVICE_STATE_TYPES StateType, UINT Entry );
 
-typedef HRESULT ( WINAPI* LPD3D10COMPILEEFFECTFROMMEMORY )( void *pData, SIZE_T DataLength, LPCSTR pSrcFileName, 
+typedef ( WINAPI* LPD3D10COMPILEEFFECTFROMMEMORY )( void *pData, SIZE_T DataLength, LPCSTR pSrcFileName, 
                                                             CONST D3D10_SHADER_MACRO *pDefines, 
                                                             ID3D10Include *pInclude, UINT HLSLFlags, UINT FXFlags, 
                                                             ID3D10Blob **ppCompiledEffect, ID3D10Blob **ppErrors );
-typedef HRESULT ( WINAPI* LPD3D10CREATEEFFECTFROMMEMORY )( void *pData, SIZE_T DataLength, UINT FXFlags, 
+typedef ( WINAPI* LPD3D10CREATEEFFECTFROMMEMORY )( void *pData, SIZE_T DataLength, UINT FXFlags, 
                                                             ID3D10Device *pDevice, 
                                                             ID3D10EffectPool *pEffectPool, 
                                                             ID3D10Effect **ppEffect );
-typedef HRESULT ( WINAPI* LPD3D10CREATEEFFECTPOOLFROMMEMORY )( void *pData, SIZE_T DataLength, UINT FXFlags, 
+typedef ( WINAPI* LPD3D10CREATEEFFECTPOOLFROMMEMORY )( void *pData, SIZE_T DataLength, UINT FXFlags, 
                                                             ID3D10Device *pDevice, ID3D10EffectPool **ppEffectPool );
 
-typedef HRESULT ( WINAPI* LPD3D10CREATEDEVICEANDSWAPCHAIN )(    IDXGIAdapter *pAdapter,
+typedef ( WINAPI* LPD3D10CREATEDEVICEANDSWAPCHAIN )(    IDXGIAdapter *pAdapter,
                                                                 D3D10_DRIVER_TYPE DriverType,
                                                                 HMODULE Software,
                                                                 UINT Flags,
@@ -167,7 +167,7 @@ typedef HRESULT ( WINAPI* LPD3D10CREATEDEVICEANDSWAPCHAIN )(    IDXGIAdapter *pA
                                                                 IDXGISwapChain **ppSwapChain,    
                                                                 ID3D10Device **ppDevice );
 
-typedef HRESULT ( WINAPI* LPD3D10CREATEDEVICEANDSWAPCHAIN1 )(   IDXGIAdapter *pAdapter,
+typedef ( WINAPI* LPD3D10CREATEDEVICEANDSWAPCHAIN1 )(   IDXGIAdapter *pAdapter,
                                                                 D3D10_DRIVER_TYPE DriverType,
                                                                 HMODULE Software,
                                                                 UINT Flags,

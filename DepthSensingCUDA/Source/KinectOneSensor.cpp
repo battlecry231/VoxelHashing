@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "KinectOneSensor.h"
 
@@ -28,7 +28,7 @@ KinectOneSensor::KinectOneSensor()
 	m_pDepthDistortionMap = NULL;
 	m_pDepthDistortionLT = NULL;
 
-	HRESULT hr = createFirstConnected();
+	hr = createFirstConnected();
 	if (hr != S_OK)	throw MLIB_EXCEPTION("failed to initialize kinect");
 
 	// create heap storage for color pixel data in RGBX format
@@ -153,9 +153,9 @@ KinectOneSensor::~KinectOneSensor()
 	SAFE_DELETE_ARRAY(m_pDepthDistortionLT);
 }
 
-HRESULT KinectOneSensor::createFirstConnected()
+KinectOneSensor::createFirstConnected()
 {
-	HRESULT hr;
+	hr;
 
 	hr = GetDefaultKinectSensor(&m_pKinectSensor);
 	if (FAILED(hr))
@@ -184,13 +184,13 @@ HRESULT KinectOneSensor::createFirstConnected()
 	return hr;
 }
 
-HRESULT KinectOneSensor::processDepth()
+KinectOneSensor::processDepth()
 {
 	IMultiSourceFrame* pMultiSourceFrame = NULL;
 	IDepthFrame* pDepthFrame = NULL;
 	IColorFrame* pColorFrame = NULL;
 
-	HRESULT hr = m_pMultiSourceFrameReader->AcquireLatestFrame(&pMultiSourceFrame);
+	hr = m_pMultiSourceFrameReader->AcquireLatestFrame(&pMultiSourceFrame);
 
 	if(SUCCEEDED(hr))
 	{
@@ -328,9 +328,9 @@ HRESULT KinectOneSensor::processDepth()
 	return hr;
 }
 
-HRESULT KinectOneSensor::setupUndistortion()
+KinectOneSensor::setupUndistortion()
 {
-	HRESULT hr = E_UNEXPECTED;
+	hr = E_UNEXPECTED;
 
 	float focalLengthX = m_depthIntrinsics(0,0) / m_depthWidth;
 	float focalLengthY = m_depthIntrinsics(1,1) / m_depthHeight;
@@ -412,7 +412,7 @@ HRESULT KinectOneSensor::setupUndistortion()
 	return S_OK;
 }
 
-HRESULT KinectOneSensor::copyDepth(IDepthFrame* pDepthFrame)
+KinectOneSensor::copyDepth(IDepthFrame* pDepthFrame)
 {
 	// Check the frame pointer
 	if (NULL == pDepthFrame)
@@ -423,7 +423,7 @@ HRESULT KinectOneSensor::copyDepth(IDepthFrame* pDepthFrame)
 	UINT nBufferSize = 0;
 	UINT16 *pBuffer = NULL;
 
-	HRESULT hr = pDepthFrame->AccessUnderlyingBuffer(&nBufferSize, &pBuffer);
+	hr = pDepthFrame->AccessUnderlyingBuffer(&nBufferSize, &pBuffer);
 	if (FAILED(hr))
 	{
 		return hr;
@@ -443,9 +443,9 @@ HRESULT KinectOneSensor::copyDepth(IDepthFrame* pDepthFrame)
 	return S_OK;
 }
 
-HRESULT KinectOneSensor::mapColorToDepth()
+KinectOneSensor::mapColorToDepth()
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	// Get the coordinates to convert color to depth space
 	hr = m_pCoordinateMapper->MapDepthFrameToColorSpace(m_depthWidth * m_depthHeight, m_pDepthRawPixelBuffer, 

@@ -5,8 +5,8 @@
 /************************************************************************/
 
 #include "DepthSensor.h"
-#include <NuiApi.h>
-#include <NuiSkeleton.h>
+
+
 
 class KinectSensor : public DepthSensor
 {
@@ -18,19 +18,19 @@ public:
 	~KinectSensor();
 
 	//! Initializes the sensor
-	HRESULT createFirstConnected();
+	createFirstConnected();
 
 	//! gets the next depth frame
-	HRESULT processDepth();
+	processDepth();
 
 	//! maps the color to depth data and copies depth and color data to the GPU
-	HRESULT processColor();
+	processColor();
 
 	//! toggles near mode if possible (only available on a windows Kinect)
-	HRESULT toggleNearMode();
+	toggleNearMode();
 
 	//! Toggle enable auto white balance
-	HRESULT toggleAutoWhiteBalance();
+	toggleAutoWhiteBalance();
 	
 
 private:

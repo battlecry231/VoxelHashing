@@ -32,7 +32,7 @@ public:
 
 		m_pKinectSensor = NULL;
 
-		HRESULT hr = createFirstConnected();
+		hr = createFirstConnected();
 		if (hr != S_OK)	throw EXCEPTION("failed to initialize kinect");
 
 		// create heap storage for color pixel data in RGBX format
@@ -174,9 +174,9 @@ public:
 		}
 	}
 
-	HRESULT createFirstConnected()
+	createFirstConnected()
 	{
-		HRESULT hr;
+		hr;
 
 		hr = GetDefaultKinectSensor(&m_pKinectSensor);
 		if (FAILED(hr))
@@ -205,13 +205,13 @@ public:
 		return hr;
 	}
 
-	HRESULT processDepth()
+	processDepth()
 	{
 		IMultiSourceFrame* pMultiSourceFrame = NULL;
 		IDepthFrame* pDepthFrame = NULL;
 		IColorFrame* pColorFrame = NULL;
 
-		HRESULT hr = m_pMultiSourceFrameReader->AcquireLatestFrame(&pMultiSourceFrame);
+		hr = m_pMultiSourceFrameReader->AcquireLatestFrame(&pMultiSourceFrame);
 
 		if(SUCCEEDED(hr))
 		{
@@ -323,13 +323,13 @@ public:
 		return hr;
 	}
 
-	HRESULT processColor() {
-		HRESULT hr = S_OK;
+	processColor() {
+		hr = S_OK;
 		return hr;
 	}
 
-	HRESULT toggleAutoWhiteBalance() {
-		HRESULT hr = S_OK;
+	toggleAutoWhiteBalance() {
+		hr = S_OK;
 		return hr;
 	}
 

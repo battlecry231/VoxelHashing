@@ -1,10 +1,10 @@
 #pragma once
 
-#include "stdafx.h"
-
 #include "GlobalAppState.h"
-
+#include "point3d.h"
 #include <vector>
+
+using namespace ml;
 
 struct SDFBlock
 {

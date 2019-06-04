@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "BinaryDumpReader.h"
 #include "GlobalAppState.h"
@@ -30,7 +30,7 @@ BinaryDumpReader::~BinaryDumpReader()
 }
 
 
-HRESULT BinaryDumpReader::createFirstConnected()
+BinaryDumpReader::createFirstConnected()
 {
 	releaseData();
 
@@ -67,7 +67,7 @@ HRESULT BinaryDumpReader::createFirstConnected()
 	return S_OK;
 }
 
-HRESULT BinaryDumpReader::processDepth()
+BinaryDumpReader::processDepth()
 {
 	if(m_CurrFrame >= m_NumFrames)
 	{

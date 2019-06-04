@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "PrimeSenseSensor.h"
 
@@ -48,9 +48,9 @@ PrimeSenseSensor::~PrimeSenseSensor()
 	}
 }
 
-HRESULT PrimeSenseSensor::createFirstConnected()
+PrimeSenseSensor::createFirstConnected()
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	openni::Status rc = openni::STATUS_OK;
 	const char* deviceURI = openni::ANY_DEVICE;
@@ -196,10 +196,10 @@ HRESULT PrimeSenseSensor::createFirstConnected()
 	return hr;
 }
 
-HRESULT PrimeSenseSensor::processDepth()
+PrimeSenseSensor::processDepth()
 {
 
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	m_bDepthImageIsUpdated = false;
 	m_bDepthImageCameraIsUpdated = false;
@@ -227,10 +227,10 @@ HRESULT PrimeSenseSensor::processDepth()
 	return hr;
 }
 
-HRESULT PrimeSenseSensor::readDepthAndColor( USHORT* depthD16, BYTE* colorRGBX )
+PrimeSenseSensor::readDepthAndColor( USHORT* depthD16, BYTE* colorRGBX )
 {
 
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	int changedIndex;
 	openni::Status rc = openni::OpenNI::waitForAnyStream(&m_streams[0], 1, &changedIndex, 0);

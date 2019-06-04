@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 
 #include "GlobalAppState.h"
 
@@ -24,9 +24,9 @@ GlobalAppState::~GlobalAppState()
 }
 
 
-HRESULT GlobalAppState::OnD3D11CreateDevice( ID3D11Device* pd3dDevice )
+GlobalAppState::OnD3D11CreateDevice( ID3D11Device* pd3dDevice )
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	// Create constant buffer		
 	D3D11_BUFFER_DESC bDesc;
@@ -122,7 +122,7 @@ void GlobalAppState::StereoCameraFrustum( D3DXMATRIX& proj, D3DXMATRIX& projInv,
 
 void GlobalAppState::MapConstantBuffer( ID3D11DeviceContext* context )
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 	D3D11_MAPPED_SUBRESOURCE mappedResource;
 	V(context->Map(m_constantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource));
 	CB_GLOBAL_APP_STATE* cbuffer = (CB_GLOBAL_APP_STATE*)mappedResource.pData;

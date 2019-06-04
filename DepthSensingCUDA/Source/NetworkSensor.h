@@ -73,16 +73,16 @@ public:
 
 	void waitForConnection();
 
-	HRESULT createFirstConnected() {
+	createFirstConnected() {
 		m_iFrame = 0;
 		waitForConnection();
 
 		return S_OK;
 	}
 
-	HRESULT processDepth();
+	processDepth();
 
-	HRESULT processColor() {
+	processColor() {
 		return S_OK;
 	}
 

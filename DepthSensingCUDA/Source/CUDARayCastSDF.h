@@ -8,7 +8,6 @@
 #include "DepthCameraUtil.h"
 #include "RayCastSDFUtil.h"
 
-#include "DX11RayIntervalSplatting.h"
 
 class CUDARayCastSDF
 {

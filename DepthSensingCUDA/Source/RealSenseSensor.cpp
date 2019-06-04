@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+
 
 #include "RealSenseSensor.h"
 
@@ -36,9 +36,9 @@ RealSenseSensor::~RealSenseSensor()
 	if (m_session) m_session->Release();
 }
 
-HRESULT RealSenseSensor::createFirstConnected()
+RealSenseSensor::createFirstConnected()
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 	m_session = PXCSession::CreateInstance();
 	if (!m_session) return S_FALSE;
 
@@ -114,9 +114,9 @@ HRESULT RealSenseSensor::createFirstConnected()
 	return hr;
 }
 
-HRESULT RealSenseSensor::processDepth()
+RealSenseSensor::processDepth()
 {
-	HRESULT hr = S_OK;
+	hr = S_OK;
 
 	// waits until new frame is available and locks it for application processing
 	pxcStatus sts = m_senseManager->AcquireFrame(false);

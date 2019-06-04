@@ -13,9 +13,6 @@
 #include "CUDACameraTrackingMultiRes.h"
 #include "DepthCameraUtil.h"
 
-#include "DX11RGBDRenderer.h"
-#include "DX11CustomRenderTarget.h"
-
 #include <cstdlib>
 
 extern "C" void computeDerivativesFloat(float* d_outputDU, float* d_outputDV, float* d_input, unsigned int width, unsigned int height);
@@ -29,9 +26,9 @@ class CUDARGBDSensor
 
 		void OnD3D11DestroyDevice();
 			
-		HRESULT OnD3D11CreateDevice(ID3D11Device* device, CUDARGBDAdapter* CUDARGBDAdapter);
+		OnD3D11CreateDevice(ID3D11Device* device, CUDARGBDAdapter* CUDARGBDAdapter);
 
-		HRESULT process(ID3D11DeviceContext* context);
+		process(ID3D11DeviceContext* context);
 
 		//! enables bilateral filtering of the depth value
 		void setFiterDepthValues(bool b = true, float sigmaD = 1.0f, float sigmaR = 1.0f);
